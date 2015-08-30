@@ -16,6 +16,7 @@ class Store(models.Model):
     name = models.CharField(max_length=255)
     activity = models.CharField(max_length=255)
     local = models.CharField(max_length=255)
+    village = models.ForeignKey(Village)
 
     def __unicode__(self):
         return self.name
