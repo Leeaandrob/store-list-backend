@@ -63,12 +63,11 @@ namespace :deploy do
 		python_path = "#{deploy_to}/bin/python"
 		run "echo baz"
 		run "#{deploy_to}/bin/pip install -r #{deploy_to}/current/requirements_production.txt"
-		run "#{python_path} #{deploy_to}/current/manage.py migrate --settings=storelist.settings_production"
-		run "rm #{deploy_to}/current/**/migrations/*[0-9]*.py && rm #{deploy_to}/current/**/migrations/*[0-9]*.pyc"
-		run "#{python_path} #{deploy_to}/current/manage.py makemigrations --settings=storelist.settings_production"
-		run "cd #{deploy_to}/current && npm install && bower install --allow-root"
-		run "#{python_path} #{deploy_to}/current/manage.py collectstatic -v0 --noinput --settings=storelist.settings_production"
-		run "cd #{deploy_to} && sudo chown -h hadrons:hadrons current"
-		run "cd #{deploy_to} && sudo chown -h hadrons:hadrons current/*"
+		#run "#{python_path} #{deploy_to}/current/manage.py migrate --settings=storelist.settings_production"
+		#run "rm #{deploy_to}/current/**/migrations/*[0-9]*.py && rm #{deploy_to}/current/**/migrations/*[0-9]*.pyc"
+		#run "#{python_path} #{deploy_to}/current/manage.py makemigrations --settings=storelist.settings_production"
+		run "#{python_path} #{deploy_to}/current/storelist/manage.py collectstatic -v0 --noinput --settings=storelist.settings_production"
+		run "cd #{deploy_to} && sudo chown -h webapps:webapps current"
+		run "cd #{deploy_to} && sudo chown -h webapps:webapps current/*"
 	end
 end

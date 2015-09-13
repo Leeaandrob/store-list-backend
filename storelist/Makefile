@@ -1,6 +1,9 @@
 clean:
 	find . -name "*.pyc" -exec rm -rf {} \;
 
+user: clean
+	python manage.py createsuperuser --settings=storelist.settings_local
+
 run: clean
 	python manage.py runserver --settings=storelist.settings_local
 

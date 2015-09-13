@@ -1,10 +1,10 @@
 #!/bin/bash
 NAME="storelist" #Name app
-DJANGODIR=/home/webapps/storelist/current/
+DJANGODIR=/home/webapps/storelist/current/storelist/
 SOCKFILE=/home/webapps/storelist/run/gunicorn.sock  # we will communicte using
 NUM_WORKERS=3                                     # how many worker processes
 DJANGO_SETTINGS_MODULE=storelist.settings_production             # which settings file should
-DJANGO_WSGI_MODULE=multishow.wsgi                     # WSGI module name
+DJANGO_WSGI_MODULE=storelist.wsgi                     # WSGI module name
 
 # Activate the virtual environment
 cd $DJANGODIR
