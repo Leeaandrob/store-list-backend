@@ -13,6 +13,11 @@ class Village(models.Model):
         return self.name
 
 
+class StoresTxt(models.Model):
+    content = models.TextField()
+    village = models.OneToOneField(Village)
+
+
 class Store(models.Model):
     name = models.CharField(max_length=255)
     activity = models.CharField(max_length=255)
