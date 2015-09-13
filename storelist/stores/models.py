@@ -23,7 +23,7 @@ class Store(models.Model):
     activity = models.CharField(max_length=255)
     local = models.CharField(max_length=255)
     village = models.ForeignKey(Village)
-    imagem = models.ImageField(upload_to='stores/')
+    imagem = models.ImageField(upload_to='stores/', default='')
 
     def __unicode__(self):
         return self.name
