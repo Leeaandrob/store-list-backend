@@ -57,7 +57,6 @@ namespace :deploy do
 		run "sudo mv -f #{path_files}/storelist.conf /etc/nginx/sites-enabled/"
 		run "sudo ln -s -f /etc/nginx/sites-enabled/storelist.conf /etc/nginx/sites-available/storelist.conf"
 		run "sudo mv -f #{path_files}/storelist_supervisor.conf /etc/supervisor/conf.d/"
-		run "sudo mv -f #{path_files}/storelist_celery_supervisor.conf /etc/supervisor/conf.d/"
 	end
 
 	task :restart, :roles => :app do
