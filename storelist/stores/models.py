@@ -6,7 +6,8 @@ class Village(models.Model):
     name = models.CharField(max_length=255)
     adress = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
-    state = models.CharField(max_lenght=255)
+    state = models.CharField(max_length=255)
+    url = models.URLField()
 
     def __unicode__(self):
         return self.name
