@@ -2,7 +2,7 @@ clean:
 	find . -name "*.pyc" -exec rm -rf {} \;
 
 run: clean
-	pyhton manage.py runserver --settings=storelist.settings_local
+	python manage.py runserver --settings=storelist.settings_local
 
 shell: clean
 	python manage.py shell --settings=storelist.settings_local
