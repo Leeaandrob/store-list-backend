@@ -30,6 +30,9 @@ INSTALLED_APPS = (
     'stores',
     'crawler',
     'homesite',
+
+    #third_apps
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
