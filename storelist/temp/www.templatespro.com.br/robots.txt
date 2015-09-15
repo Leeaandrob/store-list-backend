@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /ativo/
+Disallow: /efata/
+Disallow: /mos7_teste/
+Disallow: /mos7_wp/
+Disallow: /news/
+Disallow: /v2___/

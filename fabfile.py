@@ -4,7 +4,7 @@ from fabric import colors
 from fabric.contrib import files
 
 env.project = 'storelist'
-env.hosts = ['104.236.38.141']
+env.hosts = ['104.236.10.162']
 env.user = 'root'
 env.repository = "git@github.com:Leeaandrob/store-list-backend.git"
 

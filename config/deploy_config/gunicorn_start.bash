@@ -16,6 +16,7 @@ export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 RUNDIR=$(dirname $SOCKFILE)
 test -d $RUNDIR || mkdir -p $RUNDIR
 
+TIMEOUT=120
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do
 # not use --daemon)
@@ -24,4 +25,5 @@ exec ../../../bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
 	--workers $NUM_WORKERS \
 	--bind=unix:$SOCKFILE \
 	--log-level=debug \
-	--log-file=-
+	--log-file=- \
+	--timeout $TIMEOUT

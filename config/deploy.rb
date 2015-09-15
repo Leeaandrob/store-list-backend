@@ -6,8 +6,8 @@ require "capistrano-postgresql"
 set :application, "storelist"
 
 set :repository,  "git@github.com:Leeaandrob/store-list-backend.git"
-ssh_options[:forward_agent] = true
-default_run_options[:pty] = true
+#ssh_options[:forward_agent] = true
+#default_run_options[:pty] = true
 
 set :branch, "master"
 
